@@ -1,0 +1,51 @@
+﻿@model DoAnCuoiKiHQT.Models.Sale
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtSale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tgbd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tgbd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tgkt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tgkt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.MaSale}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

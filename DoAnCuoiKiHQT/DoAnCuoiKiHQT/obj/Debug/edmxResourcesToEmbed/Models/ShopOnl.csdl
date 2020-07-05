@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CuoiKi_HQTCSDLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Giay">
+    <Key>
+      <PropertyRef Name="MaGiay" />
+    </Key>
+    <Property Name="MaGiay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenGiay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaHang" Type="Int32" />
+    <Property Name="HinhAnh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gia" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="HangGiay" Relationship="Self.fk_G_HG" FromRole="Giay" ToRole="HangGiay" />
+    <NavigationProperty Name="Sale" Relationship="Self.fk_GiamGia" FromRole="Giay" ToRole="Sale" />
+    <NavigationProperty Name="Sizes" Relationship="Self.fk_S_G" FromRole="Giay" ToRole="Size" />
+  </EntityType>
+  <EntityType Name="GioHang">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GiaTriDon" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="NgayDat" Type="DateTime" Precision="0" />
+    <Property Name="NgayGiao" Type="DateTime" Precision="0" />
+    <Property Name="TenDN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaGiay" Type="Int32" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Soluong" Type="Int32" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.fk_DH_KH" FromRole="GioHang" ToRole="KhachHang" />
+    <NavigationProperty Name="Size1" Relationship="Self.fk_G_GH" FromRole="GioHang" ToRole="Size" />
+  </EntityType>
+  <EntityType Name="HangGiay">
+    <Key>
+      <PropertyRef Name="MaHang" />
+    </Key>
+    <Property Name="MaHang" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Giays" Relationship="Self.fk_G_HG" FromRole="HangGiay" ToRole="Giay" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="TenDN" />
+    </Key>
+    <Property Name="TenDN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sdt" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GioHangs" Relationship="Self.fk_DH_KH" FromRole="KhachHang" ToRole="GioHang" />
+    <NavigationProperty Name="HoaDons" Relationship="CuoiKi_HQTCSDLModel.fk_KhachHang" FromRole="KhachHang" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="MaGiay" />
+    </Key>
+    <Property Name="MaGiay" Type="Int32" Nullable="false" />
+    <Property Name="Sale1" Type="Int32" />
+    <NavigationProperty Name="Giay" Relationship="Self.fk_GiamGia" FromRole="Sale" ToRole="Giay" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="MaGiay" />
+      <PropertyRef Name="Size1" />
+    </Key>
+    <Property Name="MaGiay" Type="Int32" Nullable="false" />
+    <Property Name="Size1" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Giay" Relationship="Self.fk_S_G" FromRole="Size" ToRole="Giay" />
+    <NavigationProperty Name="GioHangs" Relationship="Self.fk_G_GH" FromRole="Size" ToRole="GioHang" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="fk_G_HG">
+    <End Role="HangGiay" Type="Self.HangGiay" Multiplicity="0..1" />
+    <End Role="Giay" Type="Self.Giay" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangGiay">
+        <PropertyRef Name="MaHang" />
+      </Principal>
+      <Dependent Role="Giay">
+        <PropertyRef Name="MaHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GiamGia">
+    <End Role="Giay" Type="Self.Giay" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Giay">
+        <PropertyRef Name="MaGiay" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="MaGiay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_S_G">
+    <End Role="Giay" Type="Self.Giay" Multiplicity="1" />
+    <End Role="Size" Type="Self.Size" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Giay">
+        <PropertyRef Name="MaGiay" />
+      </Principal>
+      <Dependent Role="Size">
+        <PropertyRef Name="MaGiay" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DH_KH">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
+    <End Role="GioHang" Type="Self.GioHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="TenDN" />
+      </Principal>
+      <Dependent Role="GioHang">
+        <PropertyRef Name="TenDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_G_GH">
+    <End Role="Size" Type="Self.Size" Multiplicity="0..1" />
+    <End Role="GioHang" Type="Self.GioHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="MaGiay" />
+        <PropertyRef Name="Size1" />
+      </Principal>
+      <Dependent Role="GioHang">
+        <PropertyRef Name="MaGiay" />
+        <PropertyRef Name="Size" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CuoiKi_HQTCSDLEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Giays" EntityType="Self.Giay" />
+    <EntitySet Name="GioHangs" EntityType="Self.GioHang" />
+    <EntitySet Name="HangGiays" EntityType="Self.HangGiay" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="Sales" EntityType="Self.Sale" />
+    <EntitySet Name="Sizes" EntityType="Self.Size" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="fk_G_HG" Association="Self.fk_G_HG">
+      <End Role="HangGiay" EntitySet="HangGiays" />
+      <End Role="Giay" EntitySet="Giays" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GiamGia" Association="Self.fk_GiamGia">
+      <End Role="Giay" EntitySet="Giays" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="fk_S_G" Association="Self.fk_S_G">
+      <End Role="Giay" EntitySet="Giays" />
+      <End Role="Size" EntitySet="Sizes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DH_KH" Association="Self.fk_DH_KH">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="GioHang" EntitySet="GioHangs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_G_GH" Association="Self.fk_G_GH">
+      <End Role="Size" EntitySet="Sizes" />
+      <End Role="GioHang" EntitySet="GioHangs" />
+    </AssociationSet>
+    <FunctionImport Name="Showsanpham" ReturnType="Collection(CuoiKi_HQTCSDLModel.Showsanpham_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(CuoiKi_HQTCSDLModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(CuoiKi_HQTCSDLModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="HoaDons" EntityType="CuoiKi_HQTCSDLModel.HoaDon" />
+    <AssociationSet Name="fk_KhachHang" Association="CuoiKi_HQTCSDLModel.fk_KhachHang">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="HoaDon" EntitySet="HoaDons" />
+    </AssociationSet>
+    <FunctionImport Name="SPSale" IsComposable="true" EntitySet="Giays" ReturnType="Collection(CuoiKi_HQTCSDLModel.Giay)" />
+  </EntityContainer>
+  <ComplexType Name="Showsanpham_Result">
+    <Property Type="Int32" Name="MaGiay" Nullable="false" />
+    <Property Type="String" Name="TenGiay" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="MaHang" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Gia" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="GiaTri" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TenDN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="KhachHang" Relationship="CuoiKi_HQTCSDLModel.fk_KhachHang" FromRole="HoaDon" ToRole="KhachHang" />
+    <Property Name="MaGiay" Type="Int32" />
+    <Property Name="soluong" Type="Int32" />
+  </EntityType>
+  <Association Name="fk_KhachHang">
+    <End Type="CuoiKi_HQTCSDLModel.KhachHang" Role="KhachHang" Multiplicity="0..1" />
+    <End Type="CuoiKi_HQTCSDLModel.HoaDon" Role="HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="TenDN" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="TenDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SPSale_Result">
+    <Property Type="Int32" Name="MaGiay" Nullable="false" />
+    <Property Type="String" Name="TenGiay" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="Gia" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="MaHang" Nullable="true" />
+    <Property Type="String" Name="HinhAnh" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

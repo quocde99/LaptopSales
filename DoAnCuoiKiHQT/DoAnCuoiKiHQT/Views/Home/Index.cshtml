@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="mainbanner">
+    <div id="main-banner" class="owl-carousel home-slider">
+        <div class="item"> <a href="#"><img src="~/assets/image/banners/Main-banner1.jpg" alt="main-banner1" class="img-responsive" /></a> </div>
+        <div class="item"> <a href="#"><img src="~/assets/image/banners/Main-banner2.jpg" alt="main-banner2" class="img-responsive" /></a> </div>
+        <div class="item"> <a href="#"><img src="~/assets/image/banners/Main-banner3.jpg" alt="main-banner3" class="img-responsive" /></a> </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div id="content" class="col-sm-12">
+            <div class="customtab">
+                <div id="tabs" class="customtab-wrapper">
+                    <ul class='customtab-inner'>
+                        <li class='tab'><a href="#tab-latest">Sản phẩm nổi bậc</a></li>
+                        @*<li class='tab'><a href="#tab-bestseller">Sản phẩm giảm giá</a></li>*@
+                    </ul>
+                </div>
+                <!--latest-->
+                @Html.Action("LatestPartial", "Home")
+            </div>
+
+         
+
+        </div>
+    </div>
+</div>
+
+

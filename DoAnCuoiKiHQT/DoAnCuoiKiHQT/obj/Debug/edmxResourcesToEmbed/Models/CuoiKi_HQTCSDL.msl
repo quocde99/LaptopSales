@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CuoiKi_HQTCSDLModelStoreContainer" CdmEntityContainer="CuoiKi_HQTCSDLEntities">
+    <EntitySetMapping Name="Giays">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.Giay">
+        <MappingFragment StoreEntitySet="Giay">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GioHangs">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.GioHang">
+        <MappingFragment StoreEntitySet="GioHang">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="GiaTriDon" ColumnName="GiaTriDon" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HangGiays">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.HangGiay">
+        <MappingFragment StoreEntitySet="HangGiay">
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoes">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.Kho">
+        <MappingFragment StoreEntitySet="Kho">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LichSuGiaoDiches">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.LichSuGiaoDich">
+        <MappingFragment StoreEntitySet="LichSuGiaoDich">
+          <ScalarProperty Name="MaGD" ColumnName="MaGD" />
+          <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.Sale">
+        <MappingFragment StoreEntitySet="Sale">
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="PtSale" ColumnName="PtSale" />
+          <ScalarProperty Name="Tgbd" ColumnName="Tgbd" />
+          <ScalarProperty Name="Tgkt" ColumnName="Tgkt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="LietKeGiayBanChay" FunctionName="CuoiKi_HQTCSDLModel.Store.LietKeGiayBanChay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.LietKeGiayBanChay_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CuoiKi_HQTCSDLModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SanPhamGiamGia" FunctionName="CuoiKi_HQTCSDLModel.Store.SanPhamGiamGia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.SanPhamGiamGia_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="PtSale" ColumnName="PtSale" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddHangGiay" FunctionName="CuoiKi_HQTCSDLModel.Store.AddHangGiay" />
+    <FunctionImportMapping FunctionImportName="ChiTietSanPham" FunctionName="CuoiKi_HQTCSDLModel.Store.ChiTietSanPham">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.ChiTietSanPham_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TaoTaiKhoan" FunctionName="CuoiKi_HQTCSDLModel.Store.TaoTaiKhoan" />
+    <FunctionImportMapping FunctionImportName="SuaSoLuongDH" FunctionName="CuoiKi_HQTCSDLModel.Store.SuaSoLuongDH" />
+    <FunctionImportMapping FunctionImportName="XoaKhoiGioHang" FunctionName="CuoiKi_HQTCSDLModel.Store.XoaKhoiGioHang" />
+    <FunctionImportMapping FunctionImportName="AddGioHang" FunctionName="CuoiKi_HQTCSDLModel.Store.AddGioHang" />
+    <EntitySetMapping Name="ViewGiays">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewGiay">
+        <MappingFragment StoreEntitySet="ViewGiay">
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewHangGiays">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewHangGiay">
+        <MappingFragment StoreEntitySet="ViewHangGiay">
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewKhacHangs">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewKhacHang">
+        <MappingFragment StoreEntitySet="ViewKhacHang">
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewKhoes">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewKho">
+        <MappingFragment StoreEntitySet="ViewKho">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewLSGDs">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewLSGD">
+        <MappingFragment StoreEntitySet="ViewLSGD">
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="GiaTri" ColumnName="GiaTri" />
+          <ScalarProperty Name="MaGD" ColumnName="MaGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewSales">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewSale">
+        <MappingFragment StoreEntitySet="ViewSale">
+          <ScalarProperty Name="Tgkt" ColumnName="Tgkt" />
+          <ScalarProperty Name="Tgbd" ColumnName="Tgbd" />
+          <ScalarProperty Name="PtSale" ColumnName="PtSale" />
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewTheLoais">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewTheLoai">
+        <MappingFragment StoreEntitySet="ViewTheLoai">
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Giay_D" FunctionName="CuoiKi_HQTCSDLModel.Store.Giay_D" />
+    <FunctionImportMapping FunctionImportName="Giay_I" FunctionName="CuoiKi_HQTCSDLModel.Store.Giay_I" />
+    <FunctionImportMapping FunctionImportName="Giay_S" FunctionName="CuoiKi_HQTCSDLModel.Store.Giay_S">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Giay_S_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Giay_SD" FunctionName="CuoiKi_HQTCSDLModel.Store.Giay_SD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Giay_SD_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HangGiay_D" FunctionName="CuoiKi_HQTCSDLModel.Store.HangGiay_D" />
+    <FunctionImportMapping FunctionImportName="HangGiay_I" FunctionName="CuoiKi_HQTCSDLModel.Store.HangGiay_I" />
+    <FunctionImportMapping FunctionImportName="HangGiay_S" FunctionName="CuoiKi_HQTCSDLModel.Store.HangGiay_S">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.HangGiay_S_Result">
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HangGiay_SD" FunctionName="CuoiKi_HQTCSDLModel.Store.HangGiay_SD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.HangGiay_SD_Result">
+          <ScalarProperty Name="MaHang" ColumnName="MaHang" />
+          <ScalarProperty Name="TenHang" ColumnName="TenHang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HangGiay_U" FunctionName="CuoiKi_HQTCSDLModel.Store.HangGiay_U" />
+    <FunctionImportMapping FunctionImportName="Kho_D" FunctionName="CuoiKi_HQTCSDLModel.Store.Kho_D" />
+    <FunctionImportMapping FunctionImportName="Kho_I" FunctionName="CuoiKi_HQTCSDLModel.Store.Kho_I" />
+    <FunctionImportMapping FunctionImportName="Kho_S" FunctionName="CuoiKi_HQTCSDLModel.Store.Kho_S">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Kho_S_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Kho_SD" FunctionName="CuoiKi_HQTCSDLModel.Store.Kho_SD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Kho_SD_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Kho_U" FunctionName="CuoiKi_HQTCSDLModel.Store.Kho_U" />
+    <FunctionImportMapping FunctionImportName="Sale_D" FunctionName="CuoiKi_HQTCSDLModel.Store.Sale_D" />
+    <FunctionImportMapping FunctionImportName="Sale_I" FunctionName="CuoiKi_HQTCSDLModel.Store.Sale_I" />
+    <FunctionImportMapping FunctionImportName="Sale_S" FunctionName="CuoiKi_HQTCSDLModel.Store.Sale_S">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Sale_S_Result">
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="PtSale" ColumnName="PtSale" />
+          <ScalarProperty Name="Tgbd" ColumnName="Tgbd" />
+          <ScalarProperty Name="Tgkt" ColumnName="Tgkt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sale_SId" FunctionName="CuoiKi_HQTCSDLModel.Store.Sale_SId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Sale_SId_Result">
+          <ScalarProperty Name="MaSale" ColumnName="MaSale" />
+          <ScalarProperty Name="PtSale" ColumnName="PtSale" />
+          <ScalarProperty Name="Tgbd" ColumnName="Tgbd" />
+          <ScalarProperty Name="Tgkt" ColumnName="Tgkt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sale_U" FunctionName="CuoiKi_HQTCSDLModel.Store.Sale_U" />
+    <FunctionImportMapping FunctionImportName="TheLoai_D" FunctionName="CuoiKi_HQTCSDLModel.Store.TheLoai_D" />
+    <FunctionImportMapping FunctionImportName="TheLoai_I" FunctionName="CuoiKi_HQTCSDLModel.Store.TheLoai_I" />
+    <FunctionImportMapping FunctionImportName="TheLoai_S" FunctionName="CuoiKi_HQTCSDLModel.Store.TheLoai_S">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.TheLoai_S_Result">
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TheLoai_SD" FunctionName="CuoiKi_HQTCSDLModel.Store.TheLoai_SD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.TheLoai_SD_Result">
+          <ScalarProperty Name="MaTheLoai" ColumnName="MaTheLoai" />
+          <ScalarProperty Name="TenTheLoai" ColumnName="TenTheLoai" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TheLoai_U" FunctionName="CuoiKi_HQTCSDLModel.Store.TheLoai_U" />
+    <FunctionImportMapping FunctionImportName="AddLichSuGiaoDich" FunctionName="CuoiKi_HQTCSDLModel.Store.AddLichSuGiaoDich" />
+    <FunctionImportMapping FunctionImportName="Giay_U" FunctionName="CuoiKi_HQTCSDLModel.Store.Giay_U" />
+    <EntitySetMapping Name="ViewGioHang1">
+      <EntityTypeMapping TypeName="CuoiKi_HQTCSDLModel.ViewGioHang1">
+        <MappingFragment StoreEntitySet="ViewGioHang">
+          <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="GiaTriDon" ColumnName="GiaTriDon" />
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="TaoTk" FunctionName="CuoiKi_HQTCSDLModel.Store.TaoTk" />
+    <FunctionImportMapping FunctionImportName="Showsanpham" FunctionName="CuoiKi_HQTCSDLModel.Store.Showsanpham">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Showsanpham_Result">
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Showgiohang" FunctionName="CuoiKi_HQTCSDLModel.Store.Showgiohang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CuoiKi_HQTCSDLModel.Showgiohang_Result">
+          <ScalarProperty Name="MaDH" ColumnName="MaDH" />
+          <ScalarProperty Name="GiaTriDon" ColumnName="GiaTriDon" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="MaGiay" ColumnName="MaGiay" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="TenGiay" ColumnName="TenGiay" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

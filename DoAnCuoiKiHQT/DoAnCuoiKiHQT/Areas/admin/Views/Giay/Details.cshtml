@@ -1,0 +1,75 @@
+﻿@model DoAnCuoiKiHQT.Models.Giay
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Giay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenGiay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGiay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaHang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaTheLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaSale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

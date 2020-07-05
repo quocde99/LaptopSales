@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DoAnCuoiKiHQT.Models.ViewGioHang1>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaTriDon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaGiay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhToan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaTriDon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaGiay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhToan)
+        </td>
+      
+    </tr>
+}
+
+</table>

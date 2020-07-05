@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DoAnCuoiKiHQT.Models.ViewSale>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tgbd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tgkt)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtSale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tgbd)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Tgkt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.MaSale  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.MaSale }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.MaSale  })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,39 @@
+﻿@model List<DoAnCuoiKiHQT.Models.Product>
+<div id="tab-latest" class="tab-content">
+    <div class="box">
+        <div id="latest-slidertab" class="row owl-carousel product-slider">
+            @{ foreach (var item in Model)
+
+                {
+                    int gia = (int)item.Price;
+                    <div class="item">
+                      <div class="product-thumb transition">
+                          
+                          <div class="image product-imageblock">
+                              <a href=""><img src="@item.Picture" alt="@item.ProductName" title="@item.ProductName" class="img-responsive" /> </a>
+                              
+                              <div class="button-group">
+                                  
+                                  <a class="btn btn-success btn-sm" href="@Url.Action("Product", "Home", new { sanPhamID = item.ProductID },null)"> Xem chi tiết </a>
+                                  
+                                  
+                              </div>
+                          </div>
+                          <div class="caption product-detail">
+                              <h4 class="product-name"><a href="#" title="@item.ProductName">@item.ProductName</a></h4>
+                              <p class="price product-price">@gia.ToString("#,##0").Replace(',', '.') VNĐ<span class="price-tax">Ex Tax: @item.Price VNĐ</span></p>
+                              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                          </div>
+                          <div class="button-group">
+                              <button type="button" id="Add" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
+                              <button type="button" class="addtocart-btn">Add To Cart</button>
+                              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product"><i class="fa fa-exchange"></i></button>
+                          </div>
+                      </div>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>

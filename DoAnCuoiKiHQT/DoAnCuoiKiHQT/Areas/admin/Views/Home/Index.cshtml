@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+@model List<DoAnCuoiKiHQT.Models.LietKeGiayBanChay_Result>
+<h2>Top sản phẩm bán chạy nhất</h2>
+    <table class="table">
+        <tr>
+            <th>
+                Mã Giày
+            </th>
+            <th>
+                Tên Giày
+            </th>
+            <th>
+                Giá
+            </th>
+            <th>
+                Hình Anh
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaGiay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenGiay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhAnh)
+            </td>
+        </tr>
+        }
+
+    </table>

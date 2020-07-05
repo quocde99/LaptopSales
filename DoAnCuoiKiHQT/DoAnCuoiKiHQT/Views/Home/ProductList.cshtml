@@ -1,0 +1,59 @@
+﻿@*@model List<DoAnCuoiKiHQT.Models.Product>*@
+@model PagedList.IPagedList<DoAnCuoiKiHQT.Models.Product>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="ProductList">Danh mục tất cả các sản phẩm</a></li>
+    </ul>
+    <nav class="navbar navbar-dark bg-dark">
+        @*<div class="d-flex">
+                <p>Hãng sản xuất</p>
+                <input name="hang" type="submit" id="process" value="Asus" />
+                <input name="hang" type="submit" id="process" value="Dell" />
+                <input name="hang" type="submit" id="process" value="Lenovo" />
+            </div>*@
+        @using (Html.BeginForm("ProductList", "Home"))
+        {
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" name="ten" placeholder="Tìm kiếm" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" name="search" type="submit">Tìm kiếm</button>
+            </form>
+        }
+    </nav>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            int gia = (int)item.Price;
+            <div class="col-sm-3 col-3">
+
+                <div class="card">
+                    <img class="card-img-top" src="@item.Picture" style="width:200px;height:200px; justify-content:center" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-left" style=" height:15px;overflow: hidden; text-overflow: ellipsis;">@item.ProductName</h5>
+                        <p class="card-text text-left">@gia.ToString("#,##0").Replace(',', '.') VNĐ</p>
+                        <a class="btn btn-success btn-sm" href="@Url.Action("Product", "Home", new { sanPhamID = item.ProductID },null)"> Xem chi tiết </a>
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- Thêm mã phân trang -->
+            <div class="col-lg-12 col-12">
+                <br />
+                <p>
+                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+                </p>
+                <div class="container1 pagination">
+                    @Html.PagedListPager(Model, page => Url.Action("ProductList",
+                        new { page }))
+                </div>
+            </div>
+        <!-- Kết thúc -->
+    </div>
+</div>
+

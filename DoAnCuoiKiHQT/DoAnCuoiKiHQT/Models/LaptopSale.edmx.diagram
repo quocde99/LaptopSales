@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bce834eafba547a2b2215f0d3beb79fb" Name="Diagram1">
+        <EntityTypeShape EntityType="LaptopSaleModel.Cart" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.Category" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.Configurate" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.Order_Details" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.Order" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.Product" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.Supplier" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaptopSaleModel.User" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="LaptopSaleModel.FK_Cart_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_Cart_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_Configuarate" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_OrderDetail_Pro" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_OrderUser" ManuallyRouted="false" />
+        <AssociationConnector Association="LaptopSaleModel.FK_SUPPLIERS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LaptopSaleModel.sysdiagram" Width="1.5" PointX="8.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

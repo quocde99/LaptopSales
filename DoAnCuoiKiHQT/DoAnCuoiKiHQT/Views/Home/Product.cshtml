@@ -1,0 +1,146 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using DoAnCuoiKiHQT.Models
+@model Detail_Product_Result
+@{ 
+    int gia = (int)Model.Price;
+}
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="index"><i class="fa fa-home"></i></a></li>
+    </ul>
+    <div class="row">
+        <div id="column-left" class="col-sm-3 hidden-xs column-left">
+
+        </div>
+        <div id="content" class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="thumbnails">
+                        <div><a style="width:100%;" class="thumbnail" href="@Model.Picture" title="lorem ippsum dolor dummy"><img src="@Model.Picture" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" /></a></div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="productpage-title">@Model.ProductName</h1>
+                    <div class="rating product">
+                        <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="review-count"> <a href="#" onClick="$('a[href=\'#tab-review\']').trigger('click'); return false;">1 reviews</a> / <a href="#" onClick="$('a[href=\'#tab-review\']').trigger('click'); return false;">Write a review</a></span>
+                        <hr>
+                        <!-- AddThis Button BEGIN -->
+                        <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
+                        <!-- AddThis Button END -->
+                    </div>
+                    <ul class="list-unstyled productinfo-details-top">
+                        <li>
+                            <h2 class="productpage-price">@gia.ToString("#,##0").Replace(',', '.') VNĐ</h2>
+                        </li>
+
+                    </ul>
+                    <hr>
+                    <ul class="list-unstyled product_info">
+
+                        <li>
+                            <label>Product Code:</label>
+                            <span name="id">@Model.ProductID</span>
+                        </li>
+
+                    </ul>
+                    <ul class="list-unstyled product_info">
+
+                        <li>
+                            <label>Tình trạng:</label>
+                            <span>@ViewBag.KiemTra</span>
+                        </li>
+
+                    </ul>
+                    @using (Html.BeginForm("ThemVaoGio", "GioHang", new { @sanPhamID = Model.ProductID }))
+                    {
+                        <div id="product">
+                            <div class="form-group">
+                                <label class="control-label qty-label" for="input-quantity">Số lượng</label>
+                                <input type="number" name="quantity" value="1" size="2" id="input-quantity" class="form-control productpage-qty" />
+                                <button class="btn btn-success" type="submit">Thêm vào giỏ</button>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            
+             </div>
+            
+            
+             
+            @*thông tin sản phẩm*@
+            <h2 class="text-center">Thông tin sản phẩm</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Thông tin cấu hình</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Màn hình hiển thị</th>
+                        <td>@Model.Display</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">CPU</th>
+                        <td>@Model.CPU</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Ram</th>
+                        <td>@Model.RAM</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Card đồ họa</th>
+                        <td>@Model.GraphicsChip</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">HDD</th>
+                        <td>@Model.HDD</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SSD</th>
+                        <td>@Model.SSD</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">HDMI</th>
+                        <td>@Model.HDMI</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">VGA</th>
+                        <td>@Model.VGA</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">BÀN PHÍM</th>
+                        <td>@Model.Keyboard</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Hệ điều hành</th>
+                        <td>@Model.OperatingSystem</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Kích thước</th>
+                        <td>@Model.Size</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pin</th>
+                        <td>@Model.Battery</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Cân nặng</th>
+                        <td>@Model.Weight</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    </div>
+</div>
+
+

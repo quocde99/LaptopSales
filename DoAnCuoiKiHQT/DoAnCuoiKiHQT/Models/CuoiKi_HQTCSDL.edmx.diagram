@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a55c44e13b3b42c682b5d56c7cc11c2c" Name="Diagram1">
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.Giay" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.GioHang" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.HangGiay" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.KhachHang" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.Kho" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.LichSuGiaoDich" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.Sale" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.TheLoai" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_G_GH" ManuallyRouted="false" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_G_HG" ManuallyRouted="false" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_G_TL" ManuallyRouted="false" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_GG" ManuallyRouted="false" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_Kho_Giay" ManuallyRouted="false" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_DH_KH" ManuallyRouted="false" />
+        <AssociationConnector Association="CuoiKi_HQTCSDLModel.fk_KhachHang" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewGiay" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewHangGiay" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewKhacHang" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewKho" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewLSGD" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewSale" Width="1.5" PointX="11.375" PointY="4.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewTheLoai" Width="1.5" PointX="11.375" PointY="7.75" />
+        <EntityTypeShape EntityType="CuoiKi_HQTCSDLModel.ViewGioHang1" Width="1.5" PointX="9.375" PointY="11.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
